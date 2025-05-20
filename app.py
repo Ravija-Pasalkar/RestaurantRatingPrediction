@@ -91,8 +91,6 @@ if model_artifacts:
                 'Log_Cost': log_cost
             }
 
-            predicted_rating = predict_rating(restaurant_data, model_artifacts)
-
             final_prediction = predict_rating(restaurant_data, model_artifacts)
 
             st.subheader("Prediction Results")
@@ -145,7 +143,7 @@ if model_artifacts:
             factors = []
             if cuisine_count >= 3:
                 factors.append("Diverse cuisine options")
-            if votes > 100:
+            if votes > 250:
                 factors.append("High number of votes")
             if has_online_delivery == "Yes":
                 factors.append("Online delivery availability")
